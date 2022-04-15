@@ -1,0 +1,14 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name:  {{ include "nfs-storage.fullname" . }}
+provisioner: {{ .Values.storageclass.provisioner }}
+parameters:
+  server: {{ .Values.storageclass.server }}
+  share: {{ .Values.storageclass.share }}
+reclaimPolicy: {{ .Values.storageclass.reclaimPolicy }}
+volumeBindingMode: {{ .Values.storageclass.volumeBindingMode }}
+mountOptions:
+  - hard
+  - nfsvers=4.1
+
