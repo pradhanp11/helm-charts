@@ -1,0 +1,13 @@
+# Default values for nfs-storage.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+storageclass:
+  provisioner: nfs.csi.k8s.io
+  server: docs.nivtronics.com
+  share: /nfs
+  reclaimPolicy: Retain
+  volumeBindingMode: Immediate
+
+csi-driver-nfs:
+  kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
