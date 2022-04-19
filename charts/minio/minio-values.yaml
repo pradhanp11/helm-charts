@@ -1,0 +1,10 @@
+global:
+  storageClass: nfs-storage
+
+auth:
+  rootUser: minio-admin
+  rootPassword: minio-pass
+
+service:
+  type: NodePort
+  
