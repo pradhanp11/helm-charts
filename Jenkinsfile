@@ -16,6 +16,9 @@ pipeline {
         choice(name: 'BUILD_TYPE', choices: ['main', 'development'], description: 'Please Select Build Type')
         booleanParam(name: 'RELEASE', defaultValue: false, description: 'Select to release to the Repo')
     }
+    environment {
+        def BUILD_VERSION = sh(script: "echo `date +%y.%m.%d`.${WORKSPACE}", returnStdout: true).trim()
+    }
     
     stages {
         stage('Prepare') {
@@ -38,7 +41,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo "Building: ${params.HELM_CHART}"
+                echo "Building: ${params.HELM_CHART}  Version: $BUILD_VERSION"
                 dir ("charts") {
                     sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE}"
                     sh "helm repo index ../docs/${params.BUILD_TYPE}"
@@ -54,7 +57,7 @@ pipeline {
                 }
             }
             steps {
-                echo "Releasingg: ${params.HELM_CHART}"
+                echo "Releasing: ${params.HELM_CHART} "
                 dir ("docs/${params.BUILD_TYPE}") {
                     sh 'ls -lah'
                 }
