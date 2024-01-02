@@ -13,9 +13,15 @@ pipeline {
     agent any
     parameters { choice(name: 'CHOICES', choices: choiceArray, description: 'Please Select One') }
     stages {
+        stage('Prepare') {
+            echo "Selected helm chart is: ${params.CHOICES}"
+            cd ${params.CHOICES}
+            ls -lah
+        }
         stage('Build') {
             steps {
                 echo "Selected choice is: ${params.CHOICES}"
+                cd ${params.CHOICES}
                 sh 'echo "Hello World"'
                 sh '''
                     echo "Multiline shell steps works too"
