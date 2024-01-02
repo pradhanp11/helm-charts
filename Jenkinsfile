@@ -1,7 +1,7 @@
 def choiceArray = []
 node {
     checkout scm
-    def folders = sh(returnStdout: true, script: "ls $WORKSPACE")
+    def folders = sh(returnStdout: true, script: "ls $WORKSPACE/charts")
 
     folders.split().each {
         // condition to skip files if any
