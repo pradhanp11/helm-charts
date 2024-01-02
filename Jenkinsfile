@@ -40,15 +40,19 @@ pipeline {
         }
 
         stage('Build') {
+            when {
+                expression {
+                    params.RELEASE == false
+                }
+            }
             steps {
                 echo "Building: ${params.HELM_CHART}  Version: $BUILD_VERSION"
                 dir ("charts") {
-                    sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE} --version $BUILD_VERSION"
+                    sh "helm package ${params.HELM_CHART} --version $BUILD_VERSION"
                     sh "helm repo index ../docs/${params.BUILD_TYPE}"
                 }
             }
         }
-        
 
         stage('Release') {
             when {
@@ -58,8 +62,26 @@ pipeline {
             }
             steps {
                 echo "Releasing: ${params.HELM_CHART} "
+
+                dir ("charts") {
+                    sh "rm *.tgz"
+                    sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE} --version $BUILD_VERSION"
+                    sh "helm repo index ../docs/${params.BUILD_TYPE}"
+
+                
                 dir ("docs/${params.BUILD_TYPE}") {
-                    sh 'ls -lah'
+                    script {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            withCredentials([usernamePassword(credentialsId: 'Jenkins', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                                def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
+                                sh "git config user.email pradhanp@gmail.com"
+                                sh "git config user.name pradhanp"
+                                sh "git add ."
+                                sh "git commit -m 'Triggered Build: $BUILD_VERSION'"
+                                sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/helm-charts.git"
+                            }
+                        }
+                    }
                 }
             }
         }
