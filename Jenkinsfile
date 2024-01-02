@@ -15,8 +15,8 @@ pipeline {
     stages {
         stage('Prepare') {
             echo "Selected helm chart is: ${params.CHOICES}"
-            cd ${params.CHOICES}
-            ls -lah
+            sh 'cd ${params.CHOICES}'
+            sh 'ls -lah'
         }
         stage('Build') {
             steps {
