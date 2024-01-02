@@ -67,7 +67,7 @@ pipeline {
                     sh "rm *.tgz"
                     sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE} --version $BUILD_VERSION"
                     sh "helm repo index ../docs/${params.BUILD_TYPE}"
-
+                }
                 
                 dir ("docs/${params.BUILD_TYPE}") {
                     script {
