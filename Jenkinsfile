@@ -23,7 +23,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Selected choice is: ${params.CHOICES}"
-                cd ${params.CHOICES}
                 sh 'echo "Hello World"'
                 sh '''
                     echo "Multiline shell steps works too"
