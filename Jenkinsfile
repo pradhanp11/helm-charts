@@ -18,6 +18,7 @@ pipeline {
     }
     environment {
         def BUILD_VERSION = sh(script: "echo `date +%y.%m.%d`${env.BUILD_NUMBER}", returnStdout: true).trim()
+        def HELM_FILE = sh(script: "echo ${params.HELM_CHART}-$BUILD_VERSION.tgz").trim()
     }
     
     stages {
@@ -76,7 +77,7 @@ pipeline {
                                 def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                                 sh "git config user.email pradhanp@gmail.com"
                                 sh "git config user.name pradhanp"
-                                sh "git add ."
+                                sh "git add $HELM_FILE"
                                 sh "git commit -m 'Triggered Build: $BUILD_VERSION'"
                                 sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/helm-charts.git"
                             }
