@@ -14,7 +14,7 @@ pipeline {
     parameters { 
         choice(name: 'HELM_CHART', choices: choiceArray, description: 'Please Select Helm Chart to build') 
         choice(name: 'BUILD_TYPE', choices: ['main', 'development'], description: 'Please Select Build Type')
-        booleanParam(name: 'RELEASE', defaultValue: false, description: Select to release to the Repo)
+        booleanParam(name: 'RELEASE', defaultValue: false, description: 'Select to release to the Repo')
     }
     
     stages {
