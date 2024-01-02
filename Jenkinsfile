@@ -14,9 +14,11 @@ pipeline {
     parameters { choice(name: 'CHOICES', choices: choiceArray, description: 'Please Select One') }
     stages {
         stage('Prepare') {
-            echo "Selected helm chart is: ${params.CHOICES}"
-            sh 'cd ${params.CHOICES}'
-            sh 'ls -lah'
+            steps {
+                echo "Selected helm chart is: ${params.CHOICES}"
+                sh 'cd ${params.CHOICES}'
+                sh 'ls -lah'
+            }
         }
         stage('Build') {
             steps {
