@@ -1,8 +1,20 @@
+def choiceArray = []
+node {
+    def folders = sh(returnStdout: true, script: "ls $WORKSPACE")
+
+    folders.split().each {
+        // condition to skip files if any
+        choiceArray << it
+    }
+}
+
 pipeline {
     agent any
+    parameters { choice(name: 'CHOICES', choices: choiceArray, description: 'Please Select One') }
     stages {
         stage('Build') {
             steps {
+                echo "Selected choice is: ${params.CHOICES}"
                 sh 'echo "Hello World"'
                 sh '''
                     echo "Multiline shell steps works too"
