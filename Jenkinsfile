@@ -43,7 +43,7 @@ pipeline {
             steps {
                 echo "Building: ${params.HELM_CHART}  Version: $BUILD_VERSION"
                 dir ("charts") {
-                    sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE}"
+                    sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE} --version $BUILD_VERSION"
                     sh "helm repo index ../docs/${params.BUILD_TYPE}"
                 }
             }
