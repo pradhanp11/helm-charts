@@ -16,8 +16,9 @@ pipeline {
         stage('Prepare') {
             steps {
                 echo "Selected helm chart is: ${params.CHOICES}"
-                sh "cd $WORKSPACE/charts/${params.CHOICES}"
-                sh 'ls -lah'
+                dir ("cd charts/${params.CHOICES}") {
+                    sh 'ls -lah'
+                }
             }
         }
         
@@ -34,7 +35,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing: ${params.CHOICES}"
-                sh "helm lint ."
+                sh "helm lint charts/${params.CHOICES}"
             }
         }
 
