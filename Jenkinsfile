@@ -78,10 +78,10 @@ pipeline {
                                 def HELM_FILE = sh(script: "echo ${params.HELM_CHART}-${BUILD_VERSION}.tgz", returnStdout: true).trim()
                                 sh "git config user.email pradhanp@gmail.com"
                                 sh "git config user.name pradhanp"
-                                sh "git add $HELM_FILE"
+                                sh "git add index.yaml $HELM_FILE"
                                 sh "git commit -m 'Triggered Build: $BUILD_VERSION'"
                                 //sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/helm-charts.git"
-                                sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/helm-charts.git"
+                                sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/helm-charts.git HEAD:main"
                             }
                         }
                     }
