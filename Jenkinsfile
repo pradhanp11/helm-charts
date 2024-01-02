@@ -64,7 +64,7 @@ pipeline {
                 echo "Releasing: ${params.HELM_CHART} "
 
                 dir ("charts") {
-                    sh "rm *.tgz"
+                    sh "rm *.tgz || true"
                     sh "helm package ${params.HELM_CHART} -d ../docs/${params.BUILD_TYPE} --version $BUILD_VERSION"
                     sh "helm repo index ../docs/${params.BUILD_TYPE}"
                 }
