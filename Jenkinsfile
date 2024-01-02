@@ -20,28 +20,30 @@ pipeline {
                 sh 'ls -lah'
             }
         }
+        
         stage('Build') {
             steps {
-                echo "Selected choice is: ${params.CHOICES}"
-                sh 'echo "Hello World"'
                 sh '''
-                    echo "Multiline shell steps works too"
+                    echo "Building: ${params.CHOICES}"
                     ls -lah
                 '''
             }
         }
-        stage('Deploy') {
+        
+        stage('Test') {
+            steps {
+                echo " Testing: ${params.CHOICES}"
+                sh "helm lint ."
+            }
+        }
+
+        stage('Release') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                     retry(5) {
                         sh 'echo "Deploying"'
                     }
                 }
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Success!"'
             }
         }
     }
