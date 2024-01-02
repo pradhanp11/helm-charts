@@ -17,7 +17,7 @@ pipeline {
         booleanParam(name: 'RELEASE', defaultValue: false, description: 'Select to release to the Repo')
     }
     environment {
-        def BUILD_VERSION = sh(script: "echo `date +%y.%m.%d`.${env.BUILD_NUMBER}", returnStdout: true).trim()
+        def BUILD_VERSION = sh(script: "echo `date +%y.%m.%d`${env.BUILD_NUMBER}", returnStdout: true).trim()
     }
     
     stages {
