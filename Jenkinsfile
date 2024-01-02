@@ -18,7 +18,7 @@ pipeline {
     }
     environment {
         def BUILD_VERSION = sh(script: "echo `date +%y.%m.%d`${env.BUILD_NUMBER}", returnStdout: true).trim()
-        def HELM_FILE = sh(script: "echo ${params.HELM_CHART}-$BUILD_VERSION.tgz").trim()
+        def HELM_FILE = sh(script: "echo ${params.HELM_CHART}-$BUILD_VERSION.tgz", returnStdout: true).trim()
     }
     
     stages {
