@@ -1,5 +1,6 @@
 def choiceArray = []
 node {
+    checkout scm
     def folders = sh(returnStdout: true, script: "ls $WORKSPACE")
 
     folders.split().each {
