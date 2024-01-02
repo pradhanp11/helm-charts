@@ -16,6 +16,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 echo "Selected helm chart is: ${params.CHOICES}"
+                sh "cd $WORKSPACE/charts/${params.CHOICES}"
                 sh 'ls -lah'
             }
         }
