@@ -73,6 +73,8 @@ pipeline {
                     script {
                         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                             withCredentials([usernamePassword(credentialsId: 'Jenkins', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                                echo "GIT Username: $GIT_USERNAME"
+                                echo "GIT Password: $GIT_PASSWORD"
                                 def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                                 def HELM_FILE = sh(script: "echo ${params.HELM_CHART}-$BUILD_VERSION.tgz", returnStdout: true).trim()
                                 sh "git config user.email pradhanp@gmail.com"
