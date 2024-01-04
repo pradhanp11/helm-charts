@@ -3,7 +3,7 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T00:16:18.124077026Z"
+    created: "2024-01-04T02:11:57.841197074Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -17,7 +17,7 @@ entries:
     version: 24.01.0238
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T00:16:18.023750199Z"
+    created: "2024-01-04T02:11:57.828595194Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -31,7 +31,7 @@ entries:
     version: 24.01.0237
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T00:16:18.186869982Z"
+    created: "2024-01-04T02:11:57.852513808Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +45,7 @@ entries:
     version: 24.01.042
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T00:16:17.984709663Z"
+    created: "2024-01-04T02:11:57.788588378Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -57,4 +57,44 @@ entries:
     urls:
     - guestbook-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-04T00:16:17.91966407Z"
+  keycloak:
+  - annotations:
+      category: DeveloperTools
+      images: |
+        - name: keycloak-config-cli
+          image: docker.io/bitnami/keycloak-config-cli:5.10.0-debian-11-r0
+        - name: keycloak
+          image: docker.io/bitnami/keycloak:23.0.3-debian-11-r0
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 23.0.3
+    created: "2024-01-04T02:11:57.890966689Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 13.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Keycloak is a high performance Java-based identity and access management
+      solution. It lets developers add an authentication layer to their applications
+      with minimum effort.
+    digest: 620148fd86a5a23c828f4130ef2374e0976532628b5eb791a4cc12e6bcc6d031
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/keycloak/img/keycloak-stack-220x234.png
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: keycloak
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/keycloak
+    urls:
+    - keycloak-24.01.045.tgz
+    version: 24.01.045
+generated: "2024-01-04T02:11:57.755158867Z"
