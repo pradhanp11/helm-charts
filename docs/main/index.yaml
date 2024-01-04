@@ -3,7 +3,7 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-02T21:47:38.294760626Z"
+    created: "2024-01-04T00:16:18.124077026Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -17,7 +17,7 @@ entries:
     version: 24.01.0238
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-02T21:47:38.263273652Z"
+    created: "2024-01-04T00:16:18.023750199Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -31,7 +31,21 @@ entries:
     version: 24.01.0237
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-02T21:47:38.248778128Z"
+    created: "2024-01-04T00:16:18.186869982Z"
+    dependencies:
+    - name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.5.x
+    description: A Helm chart for Kubernetes
+    digest: 701f82ddd8eaabf2c3d1bab8c3de94f5faa6e4a1a5e3e054c0deae31baa81a20
+    name: guestbook
+    type: application
+    urls:
+    - guestbook-24.01.042.tgz
+    version: 24.01.042
+  - apiVersion: v2
+    appVersion: v4
+    created: "2024-01-04T00:16:17.984709663Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -43,4 +57,4 @@ entries:
     urls:
     - guestbook-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-02T21:47:38.148796068Z"
+generated: "2024-01-04T00:16:17.91966407Z"
