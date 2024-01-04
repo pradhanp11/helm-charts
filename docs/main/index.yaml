@@ -3,7 +3,7 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T02:11:57.841197074Z"
+    created: "2024-01-04T03:28:57.781241123Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -17,7 +17,7 @@ entries:
     version: 24.01.0238
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T02:11:57.828595194Z"
+    created: "2024-01-04T03:28:57.768966698Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -31,7 +31,7 @@ entries:
     version: 24.01.0237
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T02:11:57.852513808Z"
+    created: "2024-01-04T03:28:57.79207712Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +45,7 @@ entries:
     version: 24.01.042
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T02:11:57.788588378Z"
+    created: "2024-01-04T03:28:57.737105011Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -68,7 +68,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 23.0.3
-    created: "2024-01-04T02:11:57.890966689Z"
+    created: "2024-01-04T03:28:57.833540254Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -97,4 +97,27 @@ entries:
     urls:
     - keycloak-24.01.045.tgz
     version: 24.01.045
-generated: "2024-01-04T02:11:57.755158867Z"
+  postgres-operator:
+  - apiVersion: v2
+    appVersion: 1.10.1
+    created: "2024-01-04T03:28:57.839995345Z"
+    description: Postgres Operator creates and manages PostgreSQL clusters running
+      in Kubernetes
+    digest: 06a50dc26fd4b9b2853ac96db5f2f21296a31046e4440c52e3dc0678412abb4a
+    home: https://github.com/zalando/postgres-operator
+    keywords:
+    - postgres
+    - operator
+    - cloud-native
+    - patroni
+    - spilo
+    maintainers:
+    - email: opensource@zalando.de
+      name: Zalando
+    name: postgres-operator
+    sources:
+    - https://github.com/zalando/postgres-operator
+    urls:
+    - postgres-operator-24.01.048.tgz
+    version: 24.01.048
+generated: "2024-01-04T03:28:57.709338729Z"
