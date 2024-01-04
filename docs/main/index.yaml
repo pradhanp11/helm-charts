@@ -3,7 +3,7 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:28:57.781241123Z"
+    created: "2024-01-04T03:30:17.809587454Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -17,7 +17,7 @@ entries:
     version: 24.01.0238
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:28:57.768966698Z"
+    created: "2024-01-04T03:30:17.792908422Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -31,7 +31,7 @@ entries:
     version: 24.01.0237
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:28:57.79207712Z"
+    created: "2024-01-04T03:30:17.84636509Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +45,7 @@ entries:
     version: 24.01.042
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:28:57.737105011Z"
+    created: "2024-01-04T03:30:17.751572589Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -68,7 +68,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 23.0.3
-    created: "2024-01-04T03:28:57.833540254Z"
+    created: "2024-01-04T03:30:17.931545768Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -100,7 +100,7 @@ entries:
   postgres-operator:
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T03:28:57.839995345Z"
+    created: "2024-01-04T03:30:17.937391764Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 06a50dc26fd4b9b2853ac96db5f2f21296a31046e4440c52e3dc0678412abb4a
@@ -120,4 +120,28 @@ entries:
     urls:
     - postgres-operator-24.01.048.tgz
     version: 24.01.048
-generated: "2024-01-04T03:28:57.709338729Z"
+  postgres-operator-ui:
+  - apiVersion: v2
+    appVersion: 1.10.1
+    created: "2024-01-04T03:30:17.939471085Z"
+    description: Postgres Operator UI provides a graphical interface for a convenient
+      database-as-a-service user experience
+    digest: e2eac4cb553070a83405b3e3e1bd4be6c728f5a5e07fac453cec42da9f5cd9c5
+    home: https://github.com/zalando/postgres-operator
+    keywords:
+    - postgres
+    - operator
+    - ui
+    - cloud-native
+    - patroni
+    - spilo
+    maintainers:
+    - email: opensource@zalando.de
+      name: Zalando
+    name: postgres-operator-ui
+    sources:
+    - https://github.com/zalando/postgres-operator
+    urls:
+    - postgres-operator-ui-24.01.049.tgz
+    version: 24.01.049
+generated: "2024-01-04T03:30:17.692678766Z"
