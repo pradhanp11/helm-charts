@@ -3,7 +3,7 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:57:28.398367469Z"
+    created: "2024-01-04T08:08:52.493848332Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -17,7 +17,7 @@ entries:
     version: 24.01.0238
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:57:28.364768403Z"
+    created: "2024-01-04T08:08:52.429624649Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -31,7 +31,7 @@ entries:
     version: 24.01.0237
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:57:28.422822433Z"
+    created: "2024-01-04T08:08:52.503788014Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +45,7 @@ entries:
     version: 24.01.042
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T03:57:28.334687984Z"
+    created: "2024-01-04T08:08:52.402133413Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -68,7 +68,46 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 23.0.3
-    created: "2024-01-04T03:57:28.510233312Z"
+    created: "2024-01-04T08:08:52.545095405Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 13.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Keycloak is a high performance Java-based identity and access management
+      solution. It lets developers add an authentication layer to their applications
+      with minimum effort.
+    digest: 029a54f250c932162f88033763073525156c75988d07816d07e9d7e195a2b510
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/keycloak/img/keycloak-stack-220x234.png
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: keycloak
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/keycloak
+    urls:
+    - keycloak-24.01.0411.tgz
+    version: 24.01.0411
+  - annotations:
+      category: DeveloperTools
+      images: |
+        - name: keycloak-config-cli
+          image: docker.io/bitnami/keycloak-config-cli:5.10.0-debian-11-r0
+        - name: keycloak
+          image: docker.io/bitnami/keycloak:23.0.3-debian-11-r0
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 23.0.3
+    created: "2024-01-04T08:08:52.579483581Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -100,7 +139,7 @@ entries:
   postgres-operator:
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T03:57:28.519976357Z"
+    created: "2024-01-04T08:08:52.586611349Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 06a50dc26fd4b9b2853ac96db5f2f21296a31046e4440c52e3dc0678412abb4a
@@ -123,7 +162,7 @@ entries:
   postgres-operator-ui:
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T03:57:28.532610144Z"
+    created: "2024-01-04T08:08:52.591347356Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: 77d5628e59ad0299fa4c7d159eca1887855740bb786cf3796a99002ce5e26261
@@ -146,7 +185,7 @@ entries:
     version: 24.01.0410
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T03:57:28.54073446Z"
+    created: "2024-01-04T08:08:52.599191418Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: e2eac4cb553070a83405b3e3e1bd4be6c728f5a5e07fac453cec42da9f5cd9c5
@@ -167,4 +206,4 @@ entries:
     urls:
     - postgres-operator-ui-24.01.049.tgz
     version: 24.01.049
-generated: "2024-01-04T03:57:28.299557303Z"
+generated: "2024-01-04T08:08:52.377111339Z"
