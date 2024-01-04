@@ -97,14 +97,14 @@ service:
 
 # configure UI ingress. If needed: "enabled: true"
 ingress:
-  enabled: false
+  enabled: true
   annotations:
     {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  ingressClassName: ""
+  ingressClassName: nginx
   hosts:
-    - host: ui.example.org
+    - host: postgres.nivtro.duckdns.org
       paths: ["/"]
   tls: []
   #  - secretName: ui-tls
