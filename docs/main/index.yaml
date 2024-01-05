@@ -3,7 +3,7 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T08:08:52.493848332Z"
+    created: "2024-01-05T10:45:06.35831121Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -17,7 +17,7 @@ entries:
     version: 24.01.0238
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T08:08:52.429624649Z"
+    created: "2024-01-05T10:45:06.33516213Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -31,7 +31,7 @@ entries:
     version: 24.01.0237
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T08:08:52.503788014Z"
+    created: "2024-01-05T10:45:06.388437611Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -45,7 +45,7 @@ entries:
     version: 24.01.042
   - apiVersion: v2
     appVersion: v4
-    created: "2024-01-04T08:08:52.402133413Z"
+    created: "2024-01-05T10:45:06.311204547Z"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -68,7 +68,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 23.0.3
-    created: "2024-01-04T08:08:52.545095405Z"
+    created: "2024-01-05T10:45:06.469341323Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -107,7 +107,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 23.0.3
-    created: "2024-01-04T08:08:52.579483581Z"
+    created: "2024-01-05T10:45:06.581448551Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -136,10 +136,51 @@ entries:
     urls:
     - keycloak-24.01.045.tgz
     version: 24.01.045
+  nginx:
+  - annotations:
+      category: Infrastructure
+      images: |
+        - name: git
+          image: docker.io/bitnami/git:2.43.0-debian-11-r5
+        - name: nginx-exporter
+          image: docker.io/bitnami/nginx-exporter:1.0.0-debian-11-r0
+        - name: nginx
+          image: docker.io/bitnami/nginx:1.25.3-debian-11-r3
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 1.25.3
+    created: "2024-01-05T10:45:06.60133776Z"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: NGINX Open Source is a web server that can be also used as a reverse
+      proxy, load balancer, and HTTP cache. Recommended for high-demanding sites due
+      to its ability to provide faster content.
+    digest: fbaf0bee3f26f8bc1d949d4d215c76acc1e6f809351d8139a7c10b5bf1bbd0c2
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/nginx/img/nginx-stack-220x234.png
+    keywords:
+    - nginx
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: nginx
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/nginx
+    urls:
+    - nginx-24.01.0514.tgz
+    version: 24.01.0514
   postgres-operator:
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T08:08:52.586611349Z"
+    created: "2024-01-05T10:45:06.607008376Z"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 06a50dc26fd4b9b2853ac96db5f2f21296a31046e4440c52e3dc0678412abb4a
@@ -162,7 +203,7 @@ entries:
   postgres-operator-ui:
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T08:08:52.591347356Z"
+    created: "2024-01-05T10:45:06.609130407Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: 77d5628e59ad0299fa4c7d159eca1887855740bb786cf3796a99002ce5e26261
@@ -185,7 +226,7 @@ entries:
     version: 24.01.0410
   - apiVersion: v2
     appVersion: 1.10.1
-    created: "2024-01-04T08:08:52.599191418Z"
+    created: "2024-01-05T10:45:06.611316489Z"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: e2eac4cb553070a83405b3e3e1bd4be6c728f5a5e07fac453cec42da9f5cd9c5
@@ -206,4 +247,4 @@ entries:
     urls:
     - postgres-operator-ui-24.01.049.tgz
     version: 24.01.049
-generated: "2024-01-04T08:08:52.377111339Z"
+generated: "2024-01-05T10:45:06.267392406Z"
